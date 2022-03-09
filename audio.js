@@ -7,19 +7,19 @@ soundGain.gain.value = .04;
 soundGain.connect(audioContext.destination);
 
 let tickSound = null;
-fetch('/tick.wav').then(async response => {
+fetch('tick.wav').then(async response => {
 	const buffer = await response.arrayBuffer();
 	tickSound = await audioContext.decodeAudioData(buffer);
 });
 
 let connectSound = null;
-fetch('/connect.wav').then(async response => {
+fetch('connect.wav').then(async response => {
 	const buffer = await response.arrayBuffer();
 	connectSound = await audioContext.decodeAudioData(buffer);
 });
 
 let errorSound = null;
-fetch('/error.wav').then(async response => {
+fetch('error.wav').then(async response => {
 	const buffer = await response.arrayBuffer();
 	errorSound = await audioContext.decodeAudioData(buffer);
 });
